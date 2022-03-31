@@ -12,6 +12,7 @@ steps:
 - name: hello
   image: busybox
   commands:
+  - env
   - echo hello there
 
 trigger:
