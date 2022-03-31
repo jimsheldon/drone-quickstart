@@ -22,7 +22,7 @@ services:
     ports:
       - "8080:80"
     networks:
-      - cicd_net
+      - drone_net
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./drone:/data
@@ -39,16 +39,16 @@ services:
       - DRONE_RPC_SECRET=${DRONE_RPC_SECRET}
       - DRONE_RUNNER_NAME="${HOSTNAME}-runner"
       - DRONE_RUNNER_CAPACITY=1
-      - DRONE_RUNNER_NETWORKS=cicd_net
+      - DRONE_RUNNER_NETWORKS=drone_net
       - DRONE_DEBUG=true
       - DRONE_TRACE=false
     ports:
       - "3000:3000"
     networks:
-      - cicd_net
+      - drone_net
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
 
 networks:
-  cicd_net:
-    name: cicd_net
+  drone_net:
+    name: drone_net
