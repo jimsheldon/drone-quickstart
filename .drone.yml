@@ -5,7 +5,7 @@ name: default
 
 steps:
 - name: hello
-  image: busybox
+  image: alpine
   commands:
   - echo hello world
 
