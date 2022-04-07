@@ -13,6 +13,9 @@ steps:
   image: busybox
   commands:
   - echo hello world
+  when:
+    exclude:
+    - README.md
 
 trigger:
   branch:
