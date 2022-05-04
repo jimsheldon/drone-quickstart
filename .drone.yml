@@ -8,6 +8,12 @@ services:
   image: localstack/localstack
 
 steps:
+- name: localstack-up
+  image: alpine/curl:3.14
+  commands:
+  # Checks to see that localstack service is up and running
+  - echo -n waiting for localstack && STACK=down && while [ "$STACK" == "down" ]; do echo -n "." && sleep 3 && curl -sm 1 localstack:4566/health >>/dev/null && STACK=up; done
+
 - name: hello
   image: busybox
   commands:
