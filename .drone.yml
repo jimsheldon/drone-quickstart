@@ -7,7 +7,7 @@ steps:
 - name: hello
   image: busybox
   commands:
-  - echo Brian
+  - echo TestMe
 
 trigger:
   branch:
