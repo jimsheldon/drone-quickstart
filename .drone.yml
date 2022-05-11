@@ -12,7 +12,7 @@ steps:
 - name: hello
   image: busybox
   commands:
-  - echo hello world
+  - echo hello first
 
 trigger:
   branch:
