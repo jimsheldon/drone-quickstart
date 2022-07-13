@@ -8,7 +8,7 @@ steps:
 - name: hello
   image: busybox
   commands:
-  - echo hello Humna
+  - echo hello Drone CI 11
 
 trigger:
   branch:
