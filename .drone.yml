@@ -13,7 +13,12 @@ steps:
   image: busybox
   commands:
   - echo hello world
-
+  when:
+    event:
+    - promote
+    target:
+    - example
+ 
 trigger:
   branch:
   - main
