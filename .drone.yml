@@ -12,6 +12,7 @@ steps:
 - name: hello
   image: busybox
   commands:
+  - git rev-parse HEAD
   - echo hello quicknode
  
 trigger:
