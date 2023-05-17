@@ -1,14 +1,9 @@
----
 kind: pipeline
 type: docker
 name: default
 
 steps:
   - name: hello
-    image: busybox
+    image: golang
     commands:
-      - echo hello everyone good morning
-
-trigger:
-  branch:
-    - main
+      - echo morning
