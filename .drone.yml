@@ -11,7 +11,7 @@ steps:
 - name: hello
   image: busybox
   commands:
-  - echo hello world
+  - echo wassup, drone?
  
 trigger:
   branch:
