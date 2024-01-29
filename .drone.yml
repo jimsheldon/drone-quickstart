@@ -3,15 +3,15 @@ kind: pipeline
 type: docker
 name: default
 
-platform:
-  os: darwin
-  arch: arm64
+# platform:
+#   os: darwin
+#   arch: arm64
 
 steps:
 - name: hello
   image: busybox
   commands:
-  - echo hello world
+  - echo hello world this is me binay devops guy
  
 trigger:
   branch:
