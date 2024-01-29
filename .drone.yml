@@ -11,7 +11,7 @@ steps:
 - name: hello
   image: busybox
   commands:
-  - echo hello world this is me binay devops guy
+  - echo hello world this is me binay devops guy please
  
 trigger:
   branch:
