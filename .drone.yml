@@ -1,18 +1,43 @@
+# ---
+# kind: pipeline
+# type: docker
+# name: default
+
+# # platform:
+# #   os: darwin
+# #   arch: arm64
+
+# steps:
+# - name: hello
+#   image: nginx
+#   commands:
+#   - echo hello world this is me binay devops guy please
+ 
+# trigger:
+#   branch:
+#   - main
+
+
+
 ---
 kind: pipeline
 type: docker
-name: default
-
-# platform:
-#   os: darwin
-#   arch: arm64
+name: deploy-nginx
 
 steps:
-- name: hello
-  image: busybox
-  commands:
-  - echo hello world this is me binay devops guy please
- 
+  - name: deploy-to-aws-vm
+    image: plugins/ssh
+    settings:
+      host: 44.204.87.32
+      username: ec2-user  # or any other username based on your AWS instance
+      key:
+        from_secret: aws-key-secret  # replace with your secret name for AWS key pair
+      port: 22
+      script:
+        - docker pull nginx
+        - docker run -d -p 80:80 nginx
+
 trigger:
   branch:
-  - main
+    - main
+
